@@ -1,11 +1,11 @@
-import {TeleradPage} from "../locales/pt-br/teleradPage"
-import {teleradComparativePage} from "../locales/pt-br/teleradComparativePage"
-import {teleradPrivatyFriendsPage} from "../locales/pt-br/teleradPrivateFriendsPage"
-import {teleradSucessCasePage} from "../locales/pt-br/teleradSucessCase"
+import {TeleradPage} from "./pt-br/teleradPage"
+import {teleradComparativePage} from "./pt-br/teleradComparativePage"
+import {teleradPrivatyFriendsPage} from "./pt-br/teleradPrivateFriendsPage"
+import {teleradSucessCasePage} from "./pt-br/teleradSucessCase"
 import { HigiaPage } from "./pt-br/higiaPage";
 import { consultoriaDiffptbr } from './ConsultoriaTranslations';
-import { engDiffPtbr } from './pt-br/engDiferencialTranslations.ts';
-import {produtosHigiaPTBR} from './pt-br/higiaSolutionsPtBr.ts'
+import { engDiffPtbr } from './pt-br/engDiferencialTranslations';
+import {produtosHigiaPTBR} from './pt-br/higiaSolutionsPtBr'
 import { carePtBr } from './pt-br/care';
 
 export const ptBR = {
