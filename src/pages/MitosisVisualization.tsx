@@ -21,7 +21,8 @@ import ComparativeTelerad from "./ComparativeTelerad.tsx";
 import PrivateFriendsTelerad from "./PrivateFriendsTelerad.tsx";
 import UnidadesMoveisPage from "./UnidadesMoveisPage.tsx";
 import BrazilMapAll from "./BrazilMapAll";
-import { GalaxyEcosystemPage, GalaxyViewerPage, GalaxyMainPage } from "./GalaxyPresentationPage";
+import GalaxyMainPage, { GalaxyEcosystemPage, GalaxyViewerPage } from "./GalaxyPresentationPage";
+import GroupInfoPage from "./GroupInfoPage";
 import { useTranslation } from "react-i18next";
 import Goo from '../lib/gooey-react-master/gooey-react-master/src/index';
 import { ErrorBoundary } from '../ErrorBoundary';
@@ -262,17 +263,20 @@ const CareCore = ({ radius, onClick }: { radius: number; onClick?: () => void })
 // ─── Toggle Button ────────────────────────────────────────────────────────────
 const MitosisToggleFAB = ({
   targetView,
-  onToggle
+  onToggle,
+  stage
 }: {
   targetView: "grupo" | "care";
-  onToggle: () => void
+  onToggle: () => void;
+  stage: number;
 }) => {
-  const isGrupo = targetView === "grupo";
+  // Only show the fixed FAB when in Care view AND the animation has finished (stage 6)
+  if (targetView === "grupo" || stage < 6) return null;
 
   return (
     <div
       onClick={onToggle}
-      className={`mv-toggle-fab ${isGrupo ? 'mv-toggle-fab--grupo' : 'mv-toggle-fab--care'}`}
+      className="mv-toggle-fab mv-toggle-fab--care"
       style={{
         position: "fixed",
         bottom: "40px",
@@ -280,7 +284,7 @@ const MitosisToggleFAB = ({
         width: "100px",
         height: "100px",
         borderRadius: "50%",
-        backgroundColor: isGrupo ? "#ffffff" : "#000000",
+        backgroundColor: "#000000",
         boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
         display: "flex",
         alignItems: "center",
@@ -291,13 +295,13 @@ const MitosisToggleFAB = ({
       }}
     >
       <img
-        src={isGrupo ? "/assets/careimagem-logo.svg" : "/assets/g184.png"}
+        src="/assets/g184.png"
         alt="Toggle View"
         style={{
           width: "60%",
           height: "60%",
           objectFit: "contain",
-          filter: isGrupo ? "none" : "brightness(0) invert(1)"
+          filter: "brightness(0) invert(1)"
         }}
       />
     </div>
@@ -321,8 +325,8 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
   // Calculate maxR based on viewport - the maximum radius for the cell
   // For notebooks/monitors (landscape), we need a more compact view to avoid overlaps
   // For small mobile phones, we also scale down significantly
-  let baseMaxR = isPortrait 
-    ? Math.min(w, h * 0.78) * 0.40 
+  let baseMaxR = isPortrait
+    ? Math.min(w, h * 0.78) * 0.40
     : Math.min(w, h) * 0.40;
 
   if (isMobile) {
@@ -338,22 +342,22 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
   const stages = [
     // Stage 0: Grupo resting at center
     { lx: 0, rx: 0, lr: maxR, rr: 1, bx: 0, br: 0, scale: 1 },
-    
+
     // Stage 1: Prophase - Care nucleates, membrane starts to swell on the right
     { lx: -maxR * 0.05, rx: maxR * 0.15, lr: maxR * 1.02, rr: maxR * 0.75, bx: maxR * 0.05, br: maxR * 0.9, scale: 0.96 },
-    
+
     // Stage 2: Metaphase - Elongation becomes visible, cytoplasm stretches
     { lx: -maxR * 0.1, rx: maxR * 0.55 * distMult, lr: maxR, rr: maxR * 0.82, bx: maxR * 0.22, br: maxR * 0.85, scale: 0.9 },
-    
+
     // Stage 3: Anaphase - Nuclei pull apart, bridge forms (Classic Metaball look)
     { lx: -maxR * 0.22, rx: maxR * 1.15 * distMult, lr: maxR * 0.96, rr: maxR * 0.88, bx: maxR * 0.45, br: maxR * 0.65, scale: 0.82 },
-    
+
     // Stage 4: Telophase - Constriction Apex, the "snapping point"
     { lx: -maxR * 0.42, rx: maxR * 1.85, lr: maxR * 0.92, rr: maxR * 0.95, bx: maxR * 0.75, br: maxR * 0.35, scale: 0.7 },
-    
+
     // Stage 5: Cytokinesis (Scission) - Bridge snaps, cells oscillate
     { lx: -maxR * 1.5, rx: maxR * 1.5, lr: maxR, rr: maxR, bx: 0, br: 0, scale: 0.65 },
-    
+
     // Stage 6: Care centralizing while Grupo exits stage left
     { lx: -maxR * 4, rx: 0, lr: maxR, rr: maxR, bx: 0, br: 0, scale: 1 },
   ];
@@ -450,48 +454,74 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
   }, [targetView]);
 
 
-  const r_o = (cur.lr * 1.84) / 2;
-  const r_i = (cur.lr * 1.32) / 2;
+  const r_o = (cur.lr * 1.90) / 2;
+  const r_i = (cur.lr * 1.40) / 2;
 
   const grupoOuter: ONode[] = [
-    { id: "consultoria", angle: -90, dist: r_o, content: <AppBox icon={<Brain size={48} color="#00524D" />} label={t("company.menu.hr.team")} /> }, // Using a generic 'Team' key or finding better one
-    { id: "gi-engenharia", angle: -30, dist: r_o, content: <AppBox img="/assets/gi-engenharia-logo.png" /> },
-    { id: "telerad", angle: 30, dist: r_o, content: <AppBox img="/assets/telerad-logo.png" /> },
-    { id: "logistica", angle: 90, dist: r_o, content: <AppBox img="/assets/logistica-logo.png" label={t("company.common.location")} /> }, // Using 'Locação' as it refers to Logistics/Transport in this context often, but let's see
-    { id: "the-imagem", angle: 150, dist: r_o, content: <AppBox img="/assets/theimagem-logo.png" /> },
-    { id: "galaxy", angle: 210, dist: r_o, content: (
-      <div className="mv-appbox-wrap galaxy-box">
-        <div className="mv-appbox-pulse--slow"></div>
-        <div className="mv-appbox-pulse"></div>
-        <div className="mv-appbox !bg-white border border-black/10 shadow-lg">
-          <div className="mv-appbox-inner">
-             <img src="/assets/galaxy/logo_galaxy_azul.png" className="mv-appbox-img" />
+    { id: "consultoria", angle: -90, dist: r_o, content: <AppBox icon={<Brain size={48} color="#00524D" />} label={t("company.menu.hr.team")} /> },
+    { id: "gi-engenharia", angle: -45, dist: r_o, content: <div className="scale-110 lg:scale-125"><AppBox img="/assets/gi-engenharia-logo.png" /></div> },
+    // Only show toggle if we are in stage 0 (resting Grupo)
+    ...(stage === 0 ? [{
+      id: "toggle-care", angle: 0, dist: r_o * 1.06, content: (
+        <div
+          onClick={(e) => { e.stopPropagation(); onToggleView(); }}
+          className="mv-toggle-orbit-wrap cursor-pointer hover:scale-110 transition-transform relative flex items-center justify-center"
+        >
+          <div className="absolute inset-[-8px] rounded-full bg-white/20 animate-pulse"></div>
+          <div className="absolute inset-[-16px] rounded-full bg-white/10 animate-pulse" style={{ animationDuration: '3s' }}></div>
+          <div className="w-28 h-28 lg:w-36 lg:h-36 bg-white rounded-full p-5 flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.5)] border-2 border-[#c5e24a]/50 relative z-10">
+            <img src="/assets/careimagem-logo.svg" className="w-full h-full object-contain" alt="Alternar para Care Imagem" />
           </div>
         </div>
-      </div>
-    )},
+      )
+    }] : []),
+    { id: "telerad", angle: 45, dist: r_o, content: <AppBox img="/assets/telerad-logo.png" /> },
+    { id: "logistica", angle: 90, dist: r_o, content: <AppBox img="/assets/logistica-logo.png" label={t("company.common.location")} /> },
+    { id: "the-imagem", angle: 145, dist: r_o, content: <AppBox img="/assets/theimagem-logo.png" /> },
+    {
+      id: "galaxy", angle: 195, dist: r_o, content: (
+        <div className="mv-appbox-wrap">
+          <div className="mv-appbox-pulse--slow"></div>
+          <div className="mv-appbox-pulse"></div>
+          <div className="mv-appbox !py-4">
+            <div className="mv-appbox-inner">
+              <img src="/assets/galaxy/logo_galaxy_azul.png" className="mv-appbox-img" alt="Galaxy" />
+            </div>
+          </div>
+        </div>
+      )
+    },
   ];
 
   const grupoInner: ONode[] = [
     // Consultoria (Parent: -90°)
     { id: "consultoria-diferenciais", angle: -90, dist: r_i, content: <AppCircle icon={<img src="icons/hands.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
 
-    // GI Engenharia (Parent: -30°)
-    { id: "gi-engenharia-cases", angle: -30, dist: r_i, content: <AppCircle icon={<img src="icons/VETORES-5.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
+    // GI Engenharia (Parent: -45°)
+    { id: "gi-engenharia-cases", angle: -45, dist: r_i, content: <AppCircle icon={<img src="icons/VETORES-5.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
 
-    // Telerad (Parent: 30° / 3 items: 10°, 24°, 38°)
-    { id: "telerad-comparative", angle: 10, dist: r_i, content: <AppCircle icon={<img src="icons/telerad/VETORES-13.png" className="mv-appcircle-img" />} label={t("pages.marketComparison")} /> },
-    { id: "telerad-private", angle: 24, dist: r_i, content: <AppCircle icon={<img src="icons/telerad/VETORES-16.png" className="mv-appcircle-img" />} label={t("pages.privatePartnership")} /> },
-    { id: "telerad-unidades-moveis", angle: 38, dist: r_i, content: <AppCircle icon={<img src="/assets/CARRETA AGSUS.svg" className="mv-appcircle-img scale-125" />} label={t("contentPage.unidadesMoveis.navTitle")} /> },
+    // Telerad (Parent: 45° / 3 items: 30°, 45°, 60°)
+    { id: "telerad-comparative", angle: 30, dist: r_i, content: <AppCircle icon={<img src="icons/telerad/VETORES-13.png" className="mv-appcircle-img" />} label={t("pages.marketComparison")} /> },
+    { id: "telerad-private", angle: 45, dist: r_i, content: <AppCircle icon={<img src="icons/telerad/VETORES-16.png" className="mv-appcircle-img" />} label={t("pages.privatePartnership")} /> },
+    { id: "telerad-unidades-moveis", angle: 60, dist: r_i, content: <AppCircle icon={<img src="/assets/CARRETA AGSUS.svg" className="mv-appcircle-img scale-125" />} label={t("contentPage.unidadesMoveis.navTitle")} /> },
 
     // Logística (Parent: 90° / 1 item: 90°)
     { id: "logistica-diferenciais", angle: 90, dist: r_i, content: <AppCircle icon={<img src="icons/VETORES-9.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
 
-    // The Imagem (Parent: 150° / 1 item: 150°)
-    { id: "the-imagem-differentials", angle: 150, dist: r_i, content: <AppCircle icon={<img src="icons/VETORES-21.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
+    // The Imagem (Parent: 145° / Sub-item offset to 160° to avoid overlap)
+    { id: "the-imagem-differentials", angle: 160, dist: r_i, content: <AppCircle icon={<img src="icons/VETORES-21.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
 
-    // Galaxy (Parent: 210° / Viewer node offset to separate from parent logo)
-    { id: "galaxy-viewer", angle: 225, dist: r_i, content: <AppCircle icon={<img src="/assets/galaxy/eye_viewer.png" className="mv-appcircle-img object-contain scale-125" />} label={t("contentPage.galaxy.viewer.title")} /> },
+    // Galaxy (Parent: 195° / Viewer node offset to 210° to separate from parent logo)
+    { id: "galaxy-viewer", angle: 210, dist: r_i, content: <AppCircle icon={<img src="/assets/galaxy/eye_viewer.png" className="mv-appcircle-img object-contain scale-125" />} label={t("contentPage.galaxy.viewer.title")} /> },
+
+    // New sub-solution (in the gap between Galaxy and Consultoria)
+    {
+      id: "info-subsolution", angle: 245, dist: r_i, content: (
+        <AppCircle
+          icon={<div className="mv-question-mark text-[#00524D] font-bold">?</div>}
+        />
+      )
+    },
   ];
 
   // Note: careTargetR was moved to the top level for useTransform hooks
@@ -521,6 +551,7 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
     <div className={`mv-root ${targetView === "care" ? "mv-root--care" : ""}`}>
       <div className="mv-stage" style={{ height: stageH }}>
         <animated.div style={{ scale: scaleMV, width: "100%", height: "100%", position: "absolute", top: 0, left: 0, transformOrigin: "50% 50%" }}>
+          {/* Layer 1: The Gooey Cytoplasm (Biological scission effect) */}
           <Goo intensity="strong" id="mitosis-goo">
             <svg
               width={SVG_W} height={SVG_H}
@@ -543,28 +574,49 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
                 </radialGradient>
               </defs>
               <g>
+                {/* Main Cytoplasm Blobs - These merge via the Goo filter */}
                 <animated.circle cx={lx} cy={CY} r={lr} fill="url(#grad-grupo)" />
                 <animated.circle cx={bx} cy={CY} r={br} fill="url(#grad-grupo)" />
                 <animated.circle cx={rx} cy={CY} r={rr} fill="url(#grad-care)" style={{ opacity: rr.to(val => (val > 1 ? 1 : 0)) }} />
-                
-                {/* Scission particles - only rendered at the moment of snapping */}
-                {stage === 5 && Array.from({ length: 12 }).map((_, i) => {
-                  const angle = (i / 12) * Math.PI * 2;
-                  const dist = 40 + Math.random() * 80;
-                  return (
-                    <ScissionParticle 
-                      key={i} 
-                      x={CX + cur.bx} 
-                      y={CY} 
-                      dx={Math.cos(angle) * dist} 
-                      dy={Math.sin(angle) * dist}
-                      delay={i * 0.01}
-                    />
-                  );
-                })}
               </g>
             </svg>
           </Goo>
+
+          {/* Layer 2: The Biological Membrane (Sharp, Rotating, Selective Barrier) */}
+          <svg
+            width={SVG_W} height={SVG_H}
+            style={{ position: "absolute", top: 0, left: 0, zIndex: 2, pointerEvents: "none", overflow: "visible" }}
+          >
+            <g>
+              {/* Outer Ion-Exchange Membrane (Dashed/Rotating) */}
+              <animated.circle cx={lx} cy={CY} r={lr.to(r => r + 12)} fill="none" stroke="#c5e24a" className="mv-membrane-outer" />
+
+              {/* Internal Bilayer Glow */}
+              <animated.circle cx={lx} cy={CY} r={lr.to(r => r + 4)} fill="none" stroke="white" strokeWidth={1.5} opacity={0.3} />
+
+              {/* Core Pulse Border */}
+              <animated.circle cx={lx} cy={CY} r={lr} fill="none" stroke="#c5e24a" strokeWidth={2} className="mv-membrane-pulse" />
+
+              {/* Bridge Membrane - Follows the scission point */}
+              <animated.circle cx={bx} cy={CY} r={br.to(r => r > 0 ? r + 6 : 0)} fill="none" stroke="#c5e24a" className="mv-membrane-outer" />
+
+              {/* Scission particles - only rendered at the moment of snapping (Stage 5) */}
+              {stage === 5 && Array.from({ length: 12 }).map((_, i) => {
+                const angle = (i / 12) * Math.PI * 2;
+                const dist = 40 + Math.random() * 80;
+                return (
+                  <ScissionParticle
+                    key={i}
+                    x={CX + cur.bx}
+                    y={CY}
+                    dx={Math.cos(angle) * dist}
+                    dy={Math.sin(angle) * dist}
+                    delay={i * 0.01}
+                  />
+                );
+              })}
+            </g>
+          </svg>
 
           <animated.div
             className="mv-cell-overlay"
@@ -632,6 +684,7 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
       <MitosisToggleFAB
         targetView={targetView}
         onToggle={onToggleView}
+        stage={stage}
       />
 
       <AnimatePresence>
@@ -661,22 +714,23 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
 
             <div style={{ paddingBottom: "140px" }}>
               <ErrorBoundary>
-              {activeModal === "consultoria" && <ConsultoriaPage />}
-              {activeModal === "consultoria-diferenciais" && <DiferenciaisConsultoriaPages />}
-              {activeModal === "gi-engenharia" && <GIEngenhariaPage />}
-              {activeModal === "gi-engenharia-cases" && <DiferenciaisGiEngenharia />}
-              {activeModal === "telerad" && <TeleradPage />}
-              {activeModal === "telerad-comparative" && <ComparativeTelerad />}
-              {activeModal === "telerad-private" && <PrivateFriendsTelerad />}
-              {activeModal === "telerad-unidades-moveis" && <UnidadesMoveisPage />}
-              {activeModal === "logistica" && <LogisticaPage />}
-              {activeModal === "logistica-diferenciais" && <LogisticaDifferentials />}
-              {activeModal === "the-imagem" && <TheImagemPage />}
-              {activeModal === "the-imagem-differentials" && <DifferentialsTheImagem />}
-              {activeModal === "mapa-grupo" && <BrazilMapAll />}
+                {activeModal === "consultoria" && <ConsultoriaPage />}
+                {activeModal === "consultoria-diferenciais" && <DiferenciaisConsultoriaPages />}
+                {activeModal === "gi-engenharia" && <GIEngenhariaPage />}
+                {activeModal === "gi-engenharia-cases" && <DiferenciaisGiEngenharia />}
+                {activeModal === "telerad" && <TeleradPage />}
+                {activeModal === "telerad-comparative" && <ComparativeTelerad />}
+                {activeModal === "telerad-private" && <PrivateFriendsTelerad />}
+                {activeModal === "telerad-unidades-moveis" && <UnidadesMoveisPage />}
+                {activeModal === "logistica" && <LogisticaPage />}
+                {activeModal === "logistica-diferenciais" && <LogisticaDifferentials />}
+                {activeModal === "the-imagem" && <TheImagemPage />}
+                {activeModal === "the-imagem-differentials" && <DifferentialsTheImagem />}
+                {activeModal === "mapa-grupo" && <BrazilMapAll />}
                 {activeModal === "galaxy" && <GalaxyMainPage />}
                 {activeModal === "galaxy-ecosystem" && <GalaxyEcosystemPage />}
                 {activeModal === "galaxy-viewer" && <GalaxyViewerPage />}
+                {activeModal === "info-subsolution" && <GroupInfoPage />}
               </ErrorBoundary>
             </div>
           </motion.div>

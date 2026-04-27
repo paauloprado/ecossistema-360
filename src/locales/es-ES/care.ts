@@ -133,6 +133,63 @@ export const careEsEs = {
       ],
       faqTitle: "Preguntas frecuentes",
       callout: "Con CareImagem, entras en un modelo validado, integrado y escalable que acelera el retorno de la inversión."
+    },
+    comparison: {
+      analysis: "Análisis de Viabilidad",
+      insights: "Finance Insights",
+      title: "COMPARATIVO COMPLETO — 60 MESES",
+      subtitle: "Adquisición al contado x Adquisición financiada x Locación GI",
+      cash: {
+        title: "1. ADQUISICIÓN AL CONTADO",
+        total: "R$ 1.851.000",
+        monthly: "R$ 30.850/mes",
+        items: [
+          "Equipo: R$ 970.000",
+          "Tubo: R$ 240.000",
+          "Mantenimiento: R$ 540.000",
+          "Transporte: R$ 17.500",
+          "Instalación: R$ 20.000",
+          "Cuadro de fuerza: R$ 15.000",
+          "Seguro: R$ 48.500"
+        ]
+      },
+      financed: {
+        title: "2. ADQUISICIÓN FINANCIADA",
+        total: "R$ 2.279.000",
+        monthly: "R$ 37.983/mes",
+        description: "Tasa: 1,15% mensual — 60 meses",
+        parcel: "Cuota aproximada: R$ 23.300/mes",
+        items: [
+          "Financiamiento: R$ 1.398.000",
+          "Tubo: R$ 240.000",
+          "Mantenimiento: R$ 540.000",
+          "Transporte: R$ 17.500",
+          "Instalación: R$ 20.000",
+          "Cuadro de fuerza: R$ 15.000",
+          "Seguro: R$ 48.500"
+        ]
+      },
+      rental: {
+        title: "3. LOCACIÓN GI",
+        total: "R$ 1.181.443",
+        effectiveMonthly: "R$ 19.690/mes",
+        taxBenefit: "Beneficio de R$ 880.557",
+        explanation: "La locación permite deducir hasta el 43,25% (IRPJ, CSLL, PIS, COFINS) por ser un gasto operativo.",
+        items: [
+          "Locación: R$ 2.062.000",
+          "Tubo: Incluido",
+          "Mantenimiento: Incluido",
+          "Seguro: Incluido",
+          "Logística: Incluida"
+        ]
+      },
+      impact: {
+        title: "Impacto Financiero",
+        economy: "Ahorro Total vs Financiamiento",
+        totalEconomy: "R$ 1.097.557",
+        monthlyEconomy: "≈ R$ 18.000/mes",
+        verdict: "La Locación GI é a escolha mais eficiente para preservar o caixa e maximizar o benefício fiscal."
+      }
     }
   }
 };

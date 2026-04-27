@@ -133,6 +133,63 @@ export const careEnUs = {
       ],
       faqTitle: "Frequently Asked Questions",
       callout: "With CareImagem, you enter a validated, integrated, and scalable model that accelerates the return on investment."
+    },
+    comparison: {
+      analysis: "Feasibility Analysis",
+      insights: "Finance Insights",
+      title: "COMPLETE COMPARISON — 60 MONTHS",
+      subtitle: "Cash Acquisition x Financed Acquisition x GI Leasing",
+      cash: {
+        title: "1. CASH ACQUISITION",
+        total: "R$ 1,851,000",
+        monthly: "R$ 30,850/mo",
+        items: [
+          "Equipment: R$ 970,000",
+          "Tube: R$ 240,000",
+          "Maintenance: R$ 540,000",
+          "Transport: R$ 17,500",
+          "Installation: R$ 20,000",
+          "Power Panel: R$ 15,000",
+          "Insurance: R$ 48,500"
+        ]
+      },
+      financed: {
+        title: "2. FINANCED ACQUISITION",
+        total: "R$ 2,279,000",
+        monthly: "R$ 37,983/mo",
+        description: "Rate: 1.15% per month — 60 months",
+        parcel: "Approx. installment: R$ 23,300/mo",
+        items: [
+          "Financing: R$ 1,398,000",
+          "Tube: R$ 240,000",
+          "Maintenance: R$ 540,000",
+          "Transport: R$ 17,500",
+          "Installation: R$ 20,000",
+          "Power Panel: R$ 15,000",
+          "Insurance: R$ 48,500"
+        ]
+      },
+      rental: {
+        title: "3. GI LEASING",
+        total: "R$ 1,181,443",
+        effectiveMonthly: "R$ 19,690/mo",
+        taxBenefit: "R$ 880,557 Benefit",
+        explanation: "Leasing allows for a tax deduction of up to 43.25% (IRPJ, CSLL, PIS, COFINS) as it is an operational expense.",
+        items: [
+          "Leasing: R$ 2,062,000",
+          "Tube: Included",
+          "Maintenance: Included",
+          "Insurance: Included",
+          "Logistics: Included"
+        ]
+      },
+      impact: {
+        title: "Financial Impact",
+        economy: "Total Savings vs Financing",
+        totalEconomy: "R$ 1,097,557",
+        monthlyEconomy: "≈ R$ 18,000/mo",
+        verdict: "GI Leasing is the most efficient choice for preserving cash and maximizing tax benefits."
+      }
     }
   }
 };

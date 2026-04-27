@@ -59,7 +59,7 @@ const ConsultoriaPage: React.FC = () => {
     },
   ];
   return (
-    <CompanyPage title="" next="/consult/diferencial/" prev="/galaxy/viewer/">
+    <CompanyPage title="" next="/consult/diferencial/" prev="/galaxy/info/">
       <div className="w-full min-h-screen bg-white">
         {/* Navbar */}
         <nav className="w-full px-6 py-8 flex items-center justify-between shadow-md bg-white sticky top-0 z-50">

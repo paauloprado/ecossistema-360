@@ -38,12 +38,16 @@ type CareMetric = {
 
 type CareTextBlock = {
   title: string;
-  body: string;
+  body?: string;
+  image?: string;
+  zoom?: number;
 };
 
 type CareListBlock = {
   title: string;
-  items: string[];
+  items?: string[];
+  image?: string;
+  zoom?: number;
 };
 
 type CareTableBlock = {
@@ -385,7 +389,7 @@ export const CarePresentationModal = ({
       subtitle: t("care.implantation.subtitle"),
       accent: "navy",
       Icon: Hammer,
-      bullets: [t("care.implantation.supportTitle"), t("care.implantation.phasesTitle")],
+      bullets: [t("care.implantation.phasesTitle")],
       description: t("care.implantation.description"),
       imageSlots: [
         { src: "/assets/care_imagem/implementacao-e-suporte/freepik_highquality-corporate-pho_2852768551.png", alt: "Implantação e suporte", ratio: "landscape" },
@@ -393,7 +397,8 @@ export const CarePresentationModal = ({
       lists: [
         {
           title: t("care.implantation.supportTitle"),
-          items: t("care.implantation.supports", { returnObjects: true }) as string[],
+          image: "/assets/care_imagem/implementacao-e-suporte/26.png",
+          zoom: 1.09,
         },
       ],
       textBlocks: [
@@ -523,10 +528,10 @@ export const CarePresentationModal = ({
         <header className="mv-care-header">
           <div className="mv-care-header__copy w-full">
             <div className="flex flex-col gap-8 mb-10">
-              <img 
-                src="/assets/careimagem-logo.svg" 
-                alt="CareImagem" 
-                className="h-14 lg:h-20 w-auto object-contain self-start" 
+              <img
+                src="/assets/careimagem-logo.svg"
+                alt="CareImagem"
+                className="h-14 lg:h-20 w-auto object-contain self-start"
               />
               <div>
                 {content.title !== "CareImagem" && (
@@ -619,7 +624,7 @@ export const CarePresentationModal = ({
                 // Check if this is the Patient Journey block to render a custom timeline
                 const isJourney = block.title === t("care.operations.journeyTitle");
                 const isPhases = block.title === t("care.implantation.phasesTitle");
-                
+
                 if (isJourney) {
                   const steps = [
                     "Agendamento Inteligente",
@@ -628,13 +633,13 @@ export const CarePresentationModal = ({
                     "Execução Precisa",
                     "Entrega Digital de Laudos"
                   ];
-                  
+
                   return (
                     <article key={block.title} className="bg-white border-2 border-gray-50 rounded-[30px] md:rounded-[40px] p-6 md:p-12 shadow-2xl transition-all duration-500 hover:border-[#00b4b0]/20 hover:-translate-y-2 group">
                       <h2 className="font-clash text-2xl md:text-4xl font-black mb-8 md:mb-12 text-[#091f4a] leading-tight">
                         {block.title}
                       </h2>
-                      
+
                       <div className="relative mb-12 md:mb-16 px-2 md:px-4">
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 relative z-10">
                           {steps.map((step, idx) => (
@@ -646,12 +651,12 @@ export const CarePresentationModal = ({
                                     <div className="absolute top-1/2 w-1 h-full bg-[#00b4b0]/20 z-0 md:hidden"></div>
                                   </>
                                 )}
-                                
+
                                 <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#00b4b0] shadow-lg shadow-[#00b4b0]/40 flex items-center justify-center transition-transform group-hover/step:scale-125 border-4 border-white z-10">
                                   <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white"></div>
                                 </div>
                               </div>
-                              
+
                               <span className="font-general text-base md:text-lg font-bold text-gray-800 leading-tight">
                                 {step}
                               </span>
@@ -659,7 +664,7 @@ export const CarePresentationModal = ({
                           ))}
                         </div>
                       </div>
-                      
+
                       <p className="font-general text-lg md:text-2xl text-gray-700 leading-relaxed font-semibold border-t border-gray-100 pt-8 md:pt-10">
                         Cada etapa é monitorada por indicadores de performance (KPIs) em tempo real.
                       </p>
@@ -705,9 +710,21 @@ export const CarePresentationModal = ({
                     <h2 className="font-clash text-2xl md:text-4xl font-black mb-6 md:mb-8 text-[#091f4a] leading-tight">
                       {block.title}
                     </h2>
-                    <p className="font-general text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
-                      {block.body}
-                    </p>
+                    {block.body && (
+                      <p className="font-general text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+                        {block.body}
+                      </p>
+                    )}
+                    {block.image && (
+                      <div className="mt-6 rounded-[24px] overflow-hidden shadow-lg border border-gray-100 flex items-center justify-center bg-white">
+                        <img
+                          src={block.image}
+                          alt={block.title}
+                          className="w-full h-auto object-contain transition-transform"
+                          style={block.zoom ? { transform: `scale(${block.zoom})`, transformOrigin: "center center" } : undefined}
+                        />
+                      </div>
+                    )}
                   </article>
                 );
               })}
@@ -717,8 +734,8 @@ export const CarePresentationModal = ({
 
         {content.metrics?.length ? (
           <section className="mt-12 md:mt-16 space-y-6 md:space-y-8">
-            <div className="font-clash text-xs md:text-sm font-black text-[#00b4b0] tracking-[0.2em] uppercase border-b border-[#00b4b0]/20 pb-4">
-              Indicadores de impacto
+            <div className="font-clash text-2xl md:text-4xl font-black text-[#00b4b0] border-b border-[#00b4b0]/20 pb-4">
+              Apoiado pela experiência do Grupo Imagem, que já alcança:
             </div>
             <div className="grid grid-cols-1 gap-6 md:gap-10">
               {content.metrics.map((metric) => (
@@ -743,16 +760,40 @@ export const CarePresentationModal = ({
                   <h2 className="font-clash text-2xl md:text-4xl font-black mb-8 md:mb-10 text-[#091f4a] leading-tight">
                     {list.title}
                   </h2>
-                  <ul className="space-y-4 md:space-y-6">
-                    {list.items.map((item) => (
-                      <li key={item} className="flex items-start gap-4 md:gap-6">
-                        <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 text-[#00b4b0] shrink-0 mt-1" />
-                        <span className="font-general text-lg md:text-2xl text-gray-700 leading-relaxed font-semibold">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {list.items && (
+                    <ul className={`grid gap-x-12 gap-y-6 md:gap-y-10 ${list.items.length > 6 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+                      {list.items.map((item) => {
+                        const [title, ...rest] = item.split(": ");
+                        const description = rest.join(": ");
+
+                        return (
+                          <li key={item} className="flex items-start gap-4 md:gap-6">
+                            <CheckCircle2 className="w-8 h-8 md:w-10 md:h-10 text-[#00b4b0] shrink-0 mt-1" />
+                            <div className="flex flex-col">
+                              <span className="font-general text-xl md:text-3xl text-[#091f4a] font-black leading-tight mb-2">
+                                {title}
+                              </span>
+                              {description && (
+                                <span className="font-general text-lg md:text-2xl text-gray-500 leading-relaxed font-medium">
+                                  {description}
+                                </span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                  {list.image && (
+                    <div className="mt-4 rounded-[24px] overflow-hidden shadow-lg border border-gray-100 flex items-center justify-center bg-white">
+                      <img
+                        src={list.image}
+                        alt={list.title}
+                        className="w-full h-auto object-contain transition-transform"
+                        style={list.zoom ? { transform: `scale(${list.zoom})`, transformOrigin: "center center" } : undefined}
+                      />
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
@@ -829,11 +870,10 @@ export const CarePresentationModal = ({
             {content.callouts.map((callout, idx) => (
               <div
                 key={idx}
-                className={`p-14 rounded-[48px] border-l-[12px] shadow-2xl flex items-center gap-10 ${
-                  callout.tone === "warning"
-                    ? "bg-amber-50 border-amber-400 text-amber-900"
-                    : "bg-[#00b4b0]/5 border-[#00b4b0] text-[#091f4a]"
-                }`}
+                className={`p-14 rounded-[48px] border-l-[12px] shadow-2xl flex items-center gap-10 ${callout.tone === "warning"
+                  ? "bg-amber-50 border-amber-400 text-amber-900"
+                  : "bg-[#00b4b0]/5 border-[#00b4b0] text-[#091f4a]"
+                  }`}
               >
                 <AlertTriangle className={`w-14 h-14 shrink-0 ${callout.tone === "warning" ? "text-amber-500" : "text-[#00b4b0]"}`} />
                 <p className="font-general text-2xl font-bold leading-relaxed">

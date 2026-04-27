@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Cloud, FileText, CheckCircle, TrendingUp, Zap, Shield, Maximize } from "lucide-react";
+import { Cloud, FileText, CheckCircle, TrendingUp, Zap, Shield, Maximize, Calculator, Coins } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import CompanyPage from "./CompanyPage";
 
@@ -20,13 +20,13 @@ const InfoBlock = ({ icon: Icon, title, points }: { icon: any; title: string; po
       <div className="bg-[#A1CE28]/10 p-4 rounded-2xl text-[#A1CE28] shadow-[0_0_20px_rgba(161,206,40,0.1)] shrink-0">
         <Icon size={38} />
       </div>
-      <h3 className="text-3xl md:text-4xl font-black text-[#003B5C] uppercase tracking-tighter leading-[0.9] break-words">{title}</h3>
+      <h3 className="font-clash text-2xl md:text-3xl lg:text-4xl font-black text-[#003B5C] uppercase tracking-tighter leading-[0.9] break-words">{title}</h3>
     </div>
     <ul className="space-y-5">
       {Array.isArray(points) ? points.map((p, i) => (
         <li key={i} className="flex items-start gap-4 text-gray-700 text-xl md:text-2xl leading-snug">
           <div className="mt-2.5 w-2 h-2 rounded-full bg-[#A1CE28] shrink-0 shadow-[0_0_10px_#A1CE28]" />
-          <span className="break-words">{p}</span>
+          <span className="font-general break-words">{p}</span>
         </li>
       )) : points ? (
         <li className="flex items-start gap-4 text-gray-700 text-xl md:text-2xl leading-snug">
@@ -55,10 +55,10 @@ export const GalaxyMainPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-16 py-8 lg:py-12">
             <div className="w-full md:w-1/2 space-y-6">
-              <h1 className="text-4xl md:text-7xl font-black text-[#003B5C] leading-tight tracking-tighter uppercase">
+              <h1 className="font-clash text-4xl md:text-5xl lg:text-7xl font-black text-[#003B5C] leading-[1.1] tracking-tighter uppercase">
                 {t("contentPage.galaxy.main.title")}
               </h1>
-              <p className="text-[#A1CE28] text-xl md:text-2xl font-bold tracking-widest uppercase">
+              <p className="font-general text-[#A1CE28] text-xl md:text-2xl font-bold tracking-widest uppercase">
                 {t("contentPage.galaxy.main.heroSubtitle")}
               </p>
             </div>
@@ -78,10 +78,10 @@ export const GalaxyMainPage = () => {
 
           <section className="py-12 lg:py-20 space-y-20 lg:space-y-32">
             <div className="text-center mb-12 lg:mb-16 space-y-6">
-              <span className="text-[#A1CE28] font-bold tracking-[0.4em] uppercase">
+              <span className="font-general inline-block px-5 py-2 bg-[#A1CE28]/10 text-[#00524D] text-sm font-bold tracking-widest uppercase rounded-full">
                 {t("contentPage.galaxy.main.overview.tag")}
               </span>
-              <h2 className="text-5xl md:text-6xl font-black text-[#003B5C] uppercase tracking-tighter">
+              <h2 className="font-clash text-4xl md:text-6xl font-bold text-[#003B5C] uppercase tracking-tighter leading-[1.1]">
                 {t("contentPage.galaxy.main.overview.title1")} <br className="hidden md:block" />
                 <span className="text-[#A1CE28]">{t("contentPage.galaxy.main.overview.title2")}</span>
               </h2>
@@ -95,7 +95,7 @@ export const GalaxyMainPage = () => {
             </div>
 
             <div>
-              <h2 className="text-5xl md:text-6xl font-black text-[#003B5C] mb-12 lg:mb-16 text-center uppercase tracking-tighter">
+              <h2 className="font-clash text-4xl md:text-6xl font-bold text-[#003B5C] mb-12 lg:mb-16 text-center uppercase tracking-tighter">
                 {t("contentPage.galaxy.main.features.title")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -109,18 +109,18 @@ export const GalaxyMainPage = () => {
             <div className="bg-gray-50 rounded-[40px] lg:rounded-[48px] p-8 sm:p-10 lg:p-12 border border-gray-200 relative overflow-hidden shadow-sm">
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="space-y-8">
-                  <h2 className="text-4xl sm:text-5xl font-black text-[#003B5C]">{t("contentPage.galaxy.main.impact.title")}</h2>
+                  <h2 className="font-clash text-4xl sm:text-5xl font-bold text-[#003B5C] leading-tight">{t("contentPage.galaxy.main.impact.title")}</h2>
                   <div className="space-y-6">
                     <div className="flex gap-4"><div className="text-4xl font-black text-[#A1CE28]">-60%</div><div className="text-gray-600 text-lg">{t("contentPage.galaxy.main.impact.reduction")}</div></div>
                     <div className="flex gap-4"><div className="text-4xl font-black text-[#A1CE28]">+ROI</div><div className="text-gray-600 text-lg">{t("contentPage.galaxy.main.impact.roi")}</div></div>
                   </div>
                 </div>
                 <div className="space-y-8">
-                  <h3 className="text-2xl font-bold text-[#003B5C] uppercase tracking-widest">{t("contentPage.galaxy.main.impact.saas.title")}</h3>
+                  <h3 className="font-clash text-2xl font-bold text-[#003B5C] uppercase tracking-widest">{t("contentPage.galaxy.main.impact.saas.title")}</h3>
                   <ul className="space-y-4">
-                    <li className="flex items-center gap-4 text-gray-600 text-xl"><CheckCircle size={24} className="text-[#A1CE28]" /> {t("contentPage.galaxy.main.impact.saas.monthly")}</li>
-                    <li className="flex items-center gap-4 text-gray-600 text-xl"><CheckCircle size={24} className="text-[#A1CE28]" /> {t("contentPage.galaxy.main.impact.saas.volume")}</li>
-                    <li className="flex items-center gap-4 text-gray-600 text-xl"><CheckCircle size={24} className="text-[#A1CE28]" /> {t("contentPage.galaxy.main.impact.saas.focus")}</li>
+                    <li className="flex items-center gap-4 text-gray-600 text-xl font-general"><CheckCircle size={24} className="text-[#A1CE28]" /> {t("contentPage.galaxy.main.impact.saas.monthly")}</li>
+                    <li className="flex items-center gap-4 text-gray-600 text-xl font-general"><CheckCircle size={24} className="text-[#A1CE28]" /> {t("contentPage.galaxy.main.impact.saas.volume")}</li>
+                    <li className="flex items-center gap-4 text-gray-600 text-xl font-general"><CheckCircle size={24} className="text-[#A1CE28]" /> {t("contentPage.galaxy.main.impact.saas.focus")}</li>
                   </ul>
                 </div>
               </div>
@@ -146,13 +146,13 @@ export const GalaxyEcosystemPage = () => {
 
         <div className="max-w-7xl mx-auto px-8 py-12 text-center">
           <div className="space-y-6 mb-16">
-            <span className="text-[#A1CE28] font-bold tracking-[0.4em] uppercase">
+            <span className="font-general inline-block px-5 py-2 bg-[#A1CE28]/10 text-[#00524D] text-sm font-bold tracking-widest uppercase rounded-full">
               {t("contentPage.galaxy.ecosystem.title")}
             </span>
-            <h1 className="text-4xl md:text-6xl font-black text-[#003B5C] uppercase tracking-tighter">
+            <h1 className="font-clash text-4xl md:text-5xl lg:text-7xl font-black text-[#003B5C] uppercase tracking-tighter leading-[1.1]">
               {t("contentPage.galaxy.ecosystem.subtitle")}
             </h1>
-            <p className="max-w-3xl mx-auto text-gray-600 text-lg md:text-xl leading-relaxed">
+            <p className="font-general max-w-3xl mx-auto text-gray-600 text-xl md:text-2xl leading-relaxed">
               {t("contentPage.galaxy.main.overview.tag")} {t("contentPage.galaxy.main.overview.title1")}{" "}
               <span className="text-[#A1CE28]">{t("contentPage.galaxy.main.overview.title2")}</span>
             </p>
@@ -213,7 +213,7 @@ export const GalaxyViewerPage = () => {
   ];
   
   return (
-    <CompanyPage next="/consult/" prev="/galaxy/">
+    <CompanyPage next="/galaxy/info/" prev="/galaxy/">
       <div className="w-full min-h-screen bg-white text-gray-800 pb-24 lg:pb-28">
         <nav className="w-full px-4 sm:px-6 py-4 flex items-center justify-between shadow-md bg-white mb-10 lg:mb-12">
           <div className="flex items-center gap-4">
@@ -224,12 +224,12 @@ export const GalaxyViewerPage = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-10 lg:mb-16">
-            <h1 className="text-4xl md:text-6xl font-black text-[#003B5C] uppercase">
+            <h1 className="font-clash text-4xl md:text-5xl lg:text-7xl font-black text-[#003B5C] uppercase leading-[1.1] tracking-tighter">
               {viewerPrimaryTitle} <br />
               <span className="text-[#A1CE28]">{viewerSecondaryTitle}</span>
             </h1>
-            <p className="text-gray-500 text-xl tracking-widest uppercase">{t("contentPage.galaxy.viewer.subtitle")}</p>
-            <p className="mx-auto max-w-4xl text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
+            <p className="font-general text-gray-500 text-xl tracking-widest uppercase font-bold">{t("contentPage.galaxy.viewer.subtitle")}</p>
+            <p className="font-general mx-auto max-w-4xl text-2xl text-gray-600 leading-relaxed">
               {t("contentPage.galaxy.viewer.lead")}
             </p>
           </div>
@@ -259,10 +259,10 @@ export const GalaxyViewerPage = () => {
 
           <section className="py-2 lg:py-6">
             <div className="text-center space-y-4 mb-8 lg:mb-10">
-              <span className="text-[#A1CE28] font-bold tracking-[0.4em] uppercase">
+              <span className="font-general inline-block px-5 py-2 bg-[#A1CE28]/10 text-[#00524D] text-sm font-bold tracking-widest uppercase rounded-full">
                 {t("contentPage.galaxy.viewer.details.tag")}
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#003B5C] uppercase tracking-tighter">
+              <h2 className="font-clash text-4xl md:text-6xl font-bold text-[#003B5C] uppercase tracking-tighter leading-[1.1]">
                 {t("contentPage.galaxy.viewer.details.title")}
               </h2>
             </div>

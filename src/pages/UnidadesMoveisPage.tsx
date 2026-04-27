@@ -48,7 +48,7 @@ const UnidadesMoveisPage: React.FC = () => {
           <div className="flex items-center gap-6">
             <ImageBrand src="/assets/telerad-logo.png" width={180} height={56} />
             <div className="h-8 w-px bg-gray-200" />
-            <img src="/assets/sus-sistema-unico-de-saude-logo-png_seeklogo-173547.webp" alt="SUS" className="h-10 object-contain" />
+            <img src="/assets/CARRETA AGSUS.svg" alt="AGSUS" className="h-10 object-contain" />
           </div>
           <span className="font-clash text-2xl font-bold text-gray-800 hidden lg:block">
             {t("contentPage.unidadesMoveis.navTitle")}

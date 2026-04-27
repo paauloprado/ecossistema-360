@@ -28,7 +28,8 @@ import LogisticaDifferentials from './pages/LogisticaDifferentials.tsx';
 import DiferencialGiEngenhariaPage from "./pages/DiferenciaisGiEngenhatia.tsx";
 import MitosisVisualization from "./pages/MitosisVisualization.tsx";
 import UnidadesMoveisPage from "./pages/UnidadesMoveisPage.tsx";
-import { GalaxyMainPage, GalaxyViewerPage } from "./pages/GalaxyPresentationPage.tsx";
+import GalaxyMainPage, { GalaxyEcosystemPage, GalaxyViewerPage } from "./pages/GalaxyPresentationPage.tsx";
+import GroupInfoPage from "./pages/GroupInfoPage.tsx";
 
 
 // Page components
@@ -868,6 +869,7 @@ function App() {
 
         <Route path="/galaxy/" element={<GalaxyMainPage />} />
         <Route path="/galaxy/viewer/" element={<GalaxyViewerPage />} />
+        <Route path="/galaxy/info/" element={<GroupInfoPage />} />
 
         <Route path="/theimagem/unique-features/" element={<Differentials />} />
 

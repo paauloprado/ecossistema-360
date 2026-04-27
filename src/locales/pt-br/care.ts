@@ -4,12 +4,12 @@ export const carePtBr = {
       badge: "Institucional",
       title: "CareImagem",
       subtitle: "Franquia de Centro de Diagnóstico inteligente, integrada e pronta para escalar.",
-      description: "A CareImagem é uma franquia de centro de diagnóstico por imagem inteligente e integrada, apoiada pelo ecossistema técnico e operacional do Grupo Imagem. Nasce com o propósito de expandir o acesso à medicina diagnóstica com qualidade, eficiência e padronização operacional.",
+      description: "A CareImagem é uma franquia de centro de diagnóstico por imagem inteligente e integrada, sustentada pelo ecossistema técnico e operacional do Grupo Imagem. Nasce com o propósito de expandir o acesso à medicina diagnóstica com qualidade, eficiência e padronização operacional.",
       missionTitle: "Missão",
-      missionBody: "Expandir o acesso ao diagnóstico com qualidade, eficiência e padronização operacional, guiados pelo compromisso com a vida e a excelência médica.",
+      missionBody: "Expandir o acesso ao diagnóstico com qualidade, eficiência e padronização operacional, guiados pelo compromisso com a vida e excelência médica.",
       visionTitle: "Visão",
       visionBody: "Ser a maior e mais eficiente rede de centros de diagnóstico integrados do Brasil.",
-      callout: "A CareImagem não resolve apenas um problema clínico; ela organiza uma cadeia inteira que hoje é lenta, cara e pouco padronizada.",
+      callout: "A CareImagem não resolve apenas um problema clínico; ela organiza toda uma cadeia que hoje é lenta, cara e pouco padronizada.",
       tagline: "Onde o diagnóstico ganha valor.",
       metrics: {
         lives: "Vidas impactadas diariamente",
@@ -23,19 +23,19 @@ export const carePtBr = {
     },
     market: {
       title: "Oportunidade de Mercado",
-      subtitle: "Um setor bilionário em expansão contínua",
-      description: "O setor de diagnóstico movimenta bilhões por ano e segue em expansão. Mesmo assim, ainda há espaço para modelos mais eficientes, integrados e escaláveis.",
+      subtitle: "Um setor multibilionário em expansão contínua",
+      description: "O setor de diagnóstico movimenta bilhões por ano e continua em expansão. Mesmo assim, ainda há espaço para modelos mais eficientes, integrados e escaláveis.",
       deficitTitle: "Déficit de Atendimento",
       deficitBody: "Mais de 50% dos municípios brasileiros sofrem com a carência de equipamentos de alta complexidade. A CareImagem resolve esse gap levando tecnologia de ponta para onde o paciente está.",
       longevityTitle: "Demanda Reprimida e Longevidade",
       longevityBody: "O aumento da expectativa de vida e a maior conscientização sobre a importância da prevenção geram uma demanda contínua e crescente por diagnósticos precisos. O mercado de saúde é um dos mais resilientes e estáveis para investimentos de longo prazo.",
       tableTitle: "Indicadores de Mercado",
-      callout: "O setor de diagnóstico movimenta bilhões por ano e segue em expansão. Ainda há espaço para modelos mais eficientes e escaláveis."
+      callout: "O setor de diagnóstico movimenta bilhões por ano e continua em expansão. Ainda há espaço para modelos mais eficientes e escaláveis."
     },
     problem: {
       title: "Problema do Setor",
-      subtitle: "A fragmentação gera ineficiência e demora",
-      description: "Hoje o paciente enfrenta uma jornada longa e fragmentada, com vários sistemas e etapas desconectadas, o que gera ineficiência, demora e baixa qualidade na experiência.",
+      subtitle: "Fragmentação gera ineficiência e demora",
+      description: "Hoje o paciente enfrenta uma jornada longa e fragmentada, com diversos sistemas e etapas desconectadas, o que gera ineficiência, demora e baixa qualidade na experiência.",
       impactTitle: "Impactos da Desconexão",
       impacts: [
         "Atraso no início do tratamento adequado",
@@ -63,17 +63,17 @@ export const carePtBr = {
     ecosystem: {
       title: "Ecossistema Integrado 360°",
       subtitle: "Tecnologia, Logística e Laudos Médicos 24h",
-      description: "A franquia é sustentada por um ecossistema completo que integra tecnologia, operação, logística e laudos médicos. Com tecnologia própria, inteligência artificial e laudos 24h, o modelo garante controle, escala, agilidade e alta qualidade nos diagnósticos.",
+      description: "A franquia é sustentada por um ecossistema completo que integra tecnologia, operação, logística e laudos. Com tecnologia própria, inteligência artificial e laudos 24h, o modelo garante controle, escala, agilidade e alta qualidade nos diagnósticos.",
       techTitle: "Tecnologia e Laudos 24h",
-      techBody: "Nossa tecnologia Galaxy integra IA para priorização de casos críticos e oferece um corpo médico de elite disponível 24 horas por dia, 7 dias por semana, garantindo laudos ágeis e precisos sem que o franqueado precise contratar especialistas locais.",
+      techBody: "Nossa tecnologia Galaxy integra IA para a priorização de casos críticos e oferece um corpo médico de elite disponível 24 horas por dia, 7 dias por semana, garantindo laudos ágeis e precisos sem que o franqueado precise contratar especialistas locais.",
       logisticsTitle: "Logística e Manutenção",
-      logisticsBody: "A GI Logística e a THE Imagem garantem que a unidade nunca pare. Desde a entrega técnica dos equipamentos até a manutenção preventiva rigorosa, o franqueado foca no atendimento enquanto nós cuidamos de toda a complexidade técnica.",
+      logisticsBody: "A GI Logística e a THE Imagem garantem que a unidade nunca pare. Da entrega técnica dos equipamentos à manutenção preventiva rigorosa, o franqueado foca no atendimento enquanto nós cuidamos de toda a complexidade técnica.",
       tableTitle: "Estrutura do Ecossistema"
     },
     operations: {
       title: "Operação Completa e Flexível",
       subtitle: "Múltiplas fontes de receita e modelos escaláveis",
-      description: "O franqueado opera um centro de diagnóstico completo, com múltiplas fontes de receita e capacidade de atender diferentes demandas em um único local. A CareImagem oferece diferentes modelos de implantação, permitindo crescimento progressivo conforme o potencial da região.",
+      description: "O franqueado opera um centro de diagnóstico completo, com múltiplas fontes de receita e capacidade de atender diferentes demandas em um único local. A CareImagem oferece diferentes modelos de implantação, permitindo um crescimento progressivo de acordo com o potencial da região.",
       revenueTitle: "Fontes de Receita",
       revenues: [
         "Exames de Imagem (Raio-X, Mamografia, TC, RM)",
@@ -82,7 +82,7 @@ export const carePtBr = {
         "Telemedicina e Pronto Atendimento digital"
       ],
       journeyTitle: "Jornada do Paciente CareImagem",
-      journeyBody: "Desenvolvemos um fluxo operacional otimizado: Agendamento Inteligente → Recepção Acolhedora → Triagem Técnica → Execução Precisa → Entrega Digital de Laudos. Cada etapa é monitorada por indicadores de performance (KPIs) em tempo real."
+      journeyBody: "Desenvolvemos um fluxo operacional otimizado: Agendamento Inteligente → Recepção Acolhedora → Triagem Técnica → Execução Precisa → Entrega Digital de Laudos. Cada etapa é monitorada por indicadores de desempenho (KPIs) em tempo real."
     },
     implantation: {
       title: "Implantação e Suporte Total",
@@ -91,24 +91,24 @@ export const carePtBr = {
       supportTitle: "Suporte e Padronização",
       supports: [
         "Projeto de engenharia e layout técnico (GI Engenharia)",
-        "Seleção, treinamento e capacitação de equipe (POPs)",
+        "Seleção, treinamento e capacitação da equipe (POPs)",
         "Consultoria regulatória, sanitária e técnica total",
         "Plano de Marketing e captação de pacientes",
         "Sistema de Gestão (ERP) integrado ao ecossistema"
       ],
       phasesTitle: "Fases da Implantação",
-      phasesBody: "Nossa equipe acompanha o franqueado em 5 fases críticas: 1. Estudo de Viabilidade e Ponto; 2. Projeto Executivo e Aprovação Sanitária; 3. Reforma e Adequação Técnica; 4. Instalação e Treinamento de Equipe; 5. 'Soft Opening' e Inauguração Oficial.",
+      phasesBody: "Nossa equipe acompanha o franqueado em 5 fases críticas: 1. Estudo de Viabilidade e Ponto; 2. Projeto Executivo e Aprovação Sanitária; 3. Reforma e Adequação Técnica; 4. Instalação e Treinamento da Equipe; 5. Soft Opening e Inauguração Oficial.",
       brandTitle: "Padrão Grupo Imagem",
-      brandBody: "O franqueado recebe o 'know-how' de 20 anos do Grupo Imagem, com processos operacionais padrão (POPs) que garantem a mesma qualidade técnica e de atendimento em qualquer unidade da rede."
+      brandBody: "O franqueado recebe o know-how de 20 anos do Grupo Imagem, com processos operacionais padrão (POPs) que garantem a mesma qualidade técnica e de atendimento em qualquer unidade da rede."
     },
     efficiency: {
       title: "Eficiência Operacional",
       subtitle: "Menor investimento e custos otimizados",
       description: "O modelo reduz significativamente o investimento inicial e elimina a necessidade de grandes estruturas próprias. Com uma operação mais enxuta e inteligente, a franquia se torna mais acessível, eficiente e sustentável.",
       riskTitle: "Mitigação de Risco Financeiro",
-      riskBody: "Ao transformar CAPEX (investimento em ativos) em OPEX (custos operacionais através de locação), o franqueado preserva caixa e aumenta a previsibilidade financeira, permitindo um 'break-even' mais rápido e seguro.",
+      riskBody: "Ao transformar CAPEX (investimento em ativos) em OPEX (custos operacionais via locação), o franqueado preserva o caixa e aumenta a previsibilidade financeira, permitindo um break-even mais rápido e seguro.",
       optTitle: "Otimização de Custos Fixos",
-      optBody: "Nossa estrutura de laudos remotos via Galaxy permite que o franqueado pague apenas pelo volume produzido (laudo por exame), eliminando o custo fixo elevado de manter médicos especialistas em tempo integral na unidade.",
+      optBody: "Nossa estrutura de laudos remotos via Galaxy permite que o franqueado pague apenas pelo volume produzido (laudo por exame), eliminando o alto custo fixo de manter médicos especialistas em tempo integral na unidade.",
       tableTitle: "Comparativo de Eficiência"
     },
     scale: {
@@ -133,6 +133,64 @@ export const carePtBr = {
       ],
       faqTitle: "Perguntas frequentes",
       callout: "Com a CareImagem, você entra em um modelo validado, integrado e escalável que acelera o retorno sobre o investimento."
+    },
+    comparison: {
+      analysis: "Análise de Viabilidade",
+      insights: "Insights Financeiros",
+      title: "Comparativo Completo — 60 Meses",
+      subtitle: "Aquisição à vista x Aquisição financiada x Locação GI",
+      cash: {
+        title: "Aquisição à Vista",
+        total: "R$ 1.851.000",
+        monthly: "R$ 30.850/mês",
+        items: [
+          "Equipamento: R$ 970.000",
+          "Tubo: R$ 240.000",
+          "Manutenção: R$ 540.000",
+          "Transporte: R$ 17.500",
+          "Instalação: R$ 20.000",
+          "Quadro de força: R$ 15.000",
+          "Seguro: R$ 48.500"
+        ]
+      },
+      financed: {
+        title: "Aquisição Financiada",
+        total: "R$ 2.279.000",
+        monthly: "R$ 37.983/mês",
+        description: "Taxa: 1,15% ao mês — 60 meses",
+        parcel: "Parcela aproximada: R$ 23.300/mês",
+        items: [
+          "Financiamento equipamento: R$ 1.398.000",
+          "Tubo: R$ 240.000",
+          "Manutenção: R$ 540.000",
+          "Transporte: R$ 17.500",
+          "Instalação: R$ 20.000",
+          "Quadro de força: R$ 15.000",
+          "Seguro: R$ 48.500"
+        ]
+      },
+      rental: {
+        title: "Locação GI",
+        total: "R$ 1.181.443",
+        effectiveMonthly: "R$ 19.690/mês",
+        taxBenefit: "Recuperação de R$ 880.557",
+        explanation: "A locação permite deduzir até 43,25% (IRPJ, CSLL, PIS, COFINS) por ser uma despesa operacional.",
+        items: [
+          "Mensalidade: R$ 34.697",
+          "Tubo: Incluso",
+          "Manutenção: Inclusa",
+          "Seguro: Incluso",
+          "Logística: Inclusa",
+          "Instalação: Inclusa"
+        ]
+      },
+      impact: {
+        title: "Impacto Financeiro",
+        economy: "Economia Total vs Financiamento",
+        totalEconomy: "R$ 1.097.557",
+        monthlyEconomy: "≈ R$ 18.000/mês",
+        verdict: "A Locação GI é a escolha mais eficiente para preservar o caixa e maximizar o benefício fiscal."
+      }
     }
   }
 };

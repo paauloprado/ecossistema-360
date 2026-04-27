@@ -216,6 +216,40 @@
   }
 }
 
+/* Membrane effect */
+.mv-membrane-pulse {
+  animation: mv-membrane-glow 3s ease-in-out infinite;
+}
+
+@keyframes mv-membrane-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(197, 226, 74, 0.4));
+    stroke-width: 4px;
+    opacity: 0.7;
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(197, 226, 74, 0.9));
+    stroke-width: 7px;
+    opacity: 1;
+  }
+}
+
+.mv-membrane-outer {
+  animation: mv-membrane-outer-pulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes mv-membrane-outer-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    stroke-width: 1px;
+  }
+  50% {
+    opacity: 0.5;
+    stroke-width: 2.5px;
+  }
+}
+
 /* The white container itself */
 .mv-appbox {
   position: relative;
@@ -304,6 +338,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mv-question-mark {
+  font-size: clamp(24px, 4vh, 48px);
+  line-height: 1;
+}
+
+/* Totem 1080x1920 or large portrait screens */
+@media (min-height: 1800px) and (max-width: 1200px) {
+  .mv-question-mark {
+    font-size: 64px;
+  }
 }
 
 .mv-appcircle-img {
@@ -952,5 +999,45 @@
 @media (min-width: 1080px) and (min-height: 1800px) {
   .mv-appcircle-img {
     width: 75%;
+  }
+}
+
+/* ─── Biological Membrane Effect ──────────────────────────────────────────── */
+
+.mv-membrane-outer {
+  stroke-width: 4px;
+  stroke-dasharray: 4 12;
+  opacity: 0.6;
+  animation: mv-membrane-rotate 8s linear infinite, mv-membrane-breathing 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.mv-membrane-pulse {
+  stroke-width: 2.5px;
+  animation: mv-membrane-glow 3s ease-in-out infinite;
+}
+
+@keyframes mv-membrane-rotate {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 48; }
+}
+
+@keyframes mv-membrane-breathing {
+  0%, 100% { 
+    opacity: 0.3;
+    stroke-width: 2.5px;
+  }
+  50% { 
+    opacity: 0.7;
+    stroke-width: 5px;
+  }
+}
+
+@keyframes mv-membrane-glow {
+  0%, 100% { 
+    stroke-opacity: 0.4;
+  }
+  50% { 
+    stroke-opacity: 0.8;
   }
 }
