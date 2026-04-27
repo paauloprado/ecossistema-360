@@ -157,6 +157,7 @@ export const carePtBr = {
         formula: "1.851.000 ÷ 60 = R$ 30.850/mês",
         consideration: "Considerações",
         considerationText: "Equipamento: Tomógrafo Aquilion Start 16 canais 2 MHU",
+        considerationTerm: "Considerar prazo de 60 meses",
         table: {
           equipment: "Aquisição do equipamento",    equipmentCalc: "Valor único",
           depreciation: "Depreciação",              depreciationCalc: "60 meses",

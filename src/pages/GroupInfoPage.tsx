@@ -31,7 +31,7 @@ export const GroupInfoPage = () => {
   const financedTableRows = [
     { item: t("care.comparison.financed.table.financing"),   calc: t("care.comparison.financed.table.financingCalc"),   value: "R$ 1.398.000" },
     { item: t("care.comparison.financed.table.tube"),        calc: t("care.comparison.financed.table.tubeCalc"),        value: "R$ 240.000" },
-    { item: t("care.comparison.financed.table.maintenance"), calc: t("care.comparison.financed.table.maintenanceCalc"), value: "R$ 540.000" },
+    { item: t("care.comparison.financed.table.maintenance"), calc: t("care.comparison.cash.table.maintenanceCalc"),     value: "R$ 486.000" },
     { item: t("care.comparison.financed.table.transport"),   calc: t("care.comparison.financed.table.transportCalc"),   value: "R$ 17.500" },
     { item: t("care.comparison.financed.table.infra"),       calc: t("care.comparison.financed.table.infraCalc"),       value: "R$ 20.000" },
     { item: t("care.comparison.financed.table.panel"),       calc: t("care.comparison.financed.table.panelCalc"),       value: "R$ 15.000" },
@@ -95,9 +95,6 @@ export const GroupInfoPage = () => {
                   {t("care.comparison.heroLine1")} <br />
                   <span className="text-[#A1CE28]">{t("care.comparison.heroLine2")}</span>
                 </h1>
-                <p className="font-general text-2xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  {t("care.comparison.subtitle")}
-                </p>
               </motion.div>
             </div>
 
@@ -141,9 +138,10 @@ export const GroupInfoPage = () => {
                 </div>
 
                 {/* Consideration note */}
-                <div className="bg-gray-50 rounded-xl px-5 py-4 border border-gray-100">
-                  <span className="text-sm font-black text-gray-600 uppercase tracking-wide">{t("care.comparison.cash.consideration")}: </span>
-                  <span className="text-sm text-gray-500 font-medium">{t("care.comparison.cash.considerationText")}</span>
+                <div className="bg-gray-50 rounded-xl px-5 py-4 border border-gray-100 space-y-1.5">
+                  <p className="text-sm font-black text-gray-600 uppercase tracking-wide">{t("care.comparison.cash.consideration")}:</p>
+                  <p className="text-sm text-gray-500 font-medium">{t("care.comparison.cash.considerationText")}</p>
+                  <p className="text-sm text-gray-500 font-medium">{t("care.comparison.cash.considerationTerm")}</p>
                 </div>
 
                 {/* Total + Formula */}

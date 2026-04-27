@@ -157,6 +157,7 @@ export const careEnUs = {
         formula: "1,851,000 ÷ 60 = R$ 30,850/mo",
         consideration: "Notes",
         considerationText: "Equipment: Aquilion Start 16-slice CT Scanner, 2 MHU",
+        considerationTerm: "Consider a term of 60 months",
         table: {
           equipment: "Equipment acquisition",    equipmentCalc: "One-time",
           depreciation: "Depreciation",          depreciationCalc: "60 months",
