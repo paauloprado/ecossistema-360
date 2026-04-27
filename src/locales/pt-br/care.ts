@@ -136,53 +136,85 @@ export const carePtBr = {
     },
     comparison: {
       analysis: "Análise de Viabilidade",
-      insights: "Insights Financeiros",
+      insights: "Finance Insights",
+      heroLine1: "Por que Locar",
+      heroLine2: "Conosco",
       title: "Comparativo Completo — 60 Meses",
       subtitle: "Aquisição à vista x Aquisição financiada x Locação GI",
+      upTo: "Até",
+      projected: "Economia Real Projetada",
+      monthlySaving: "Economia Mensal",
+      totalSaving: "Economia Total em 60 Meses",
+      tableHeaders: {
+        item: "Item",
+        calc: "Cálculo",
+        value: "Valor"
+      },
       cash: {
         title: "Aquisição à Vista",
         total: "R$ 1.851.000",
         monthly: "R$ 30.850/mês",
-        items: [
-          "Equipamento: R$ 970.000",
-          "Tubo: R$ 240.000",
-          "Manutenção: R$ 540.000",
-          "Transporte: R$ 17.500",
-          "Instalação: R$ 20.000",
-          "Quadro de força: R$ 15.000",
-          "Seguro: R$ 48.500"
-        ]
+        formula: "1.851.000 ÷ 60 = R$ 30.850/mês",
+        consideration: "Considerações",
+        considerationText: "Equipamento: Tomógrafo Aquilion Start 16 canais 2 MHU",
+        table: {
+          equipment: "Aquisição do equipamento",    equipmentCalc: "Valor único",
+          depreciation: "Depreciação",              depreciationCalc: "60 meses",
+          tube: "Tubo",                             tubeCalc: "60 meses",
+          maintenance: "Contrato de Manutenção",    maintenanceCalc: "R$ 8.100,00",
+          transport: "Transporte",                  transportCalc: "Valor único",
+          infra: "Infraestrutura e Elétrica",       infraCalc: "Valor único estimado",
+          panel: "Quadro de força",                 panelCalc: "Valor único",
+          insurance: "Seguro",                      insuranceCalc: "1% ao ano"
+        }
       },
       financed: {
         title: "Aquisição Financiada",
         total: "R$ 2.279.000",
         monthly: "R$ 37.983/mês",
+        formula: "23.300/mês × 60 + custos = R$ 2.279.000",
         description: "Taxa: 1,15% ao mês — 60 meses",
-        parcel: "Parcela aproximada: R$ 23.300/mês",
-        items: [
-          "Financiamento equipamento: R$ 1.398.000",
-          "Tubo: R$ 240.000",
-          "Manutenção: R$ 540.000",
-          "Transporte: R$ 17.500",
-          "Instalação: R$ 20.000",
-          "Quadro de força: R$ 15.000",
-          "Seguro: R$ 48.500"
-        ]
+        parcel: "Parcela aprox.: R$ 23.300/mês",
+        considerLabel: "Considerar",
+        rateLabel: "Taxa",
+        termLabel: "Prazo",
+        equipInitial: "Valor inicial do equipamento",
+        equipTotal: "Valor total do equipamento",
+        table: {
+          financing: "Financiamento equipamento",   financingCalc: "R$ 23.300/mês × 60",
+          tube: "Tubo",                             tubeCalc: "60 meses",
+          maintenance: "Contrato de Manutenção",    maintenanceCalc: "R$ 9.000,00",
+          transport: "Transporte",                  transportCalc: "Valor único",
+          infra: "Infraestrutura e Elétrica",       infraCalc: "Valor único estimado",
+          panel: "Quadro de força",                 panelCalc: "Valor único",
+          insurance: "Seguro",                      insuranceCalc: "1% ao ano"
+        }
       },
       rental: {
         title: "Locação GI",
         total: "R$ 1.181.443",
         effectiveMonthly: "R$ 19.690/mês",
+        monthlyLabel: "Custo Mensal Efetivo",
         taxBenefit: "Recuperação de R$ 880.557",
-        explanation: "A locação permite deduzir até 43,25% (IRPJ, CSLL, PIS, COFINS) por ser uma despesa operacional.",
+        taxLabel: "Impostos considerados",
+        pisCofins: "Tributos federais sobre faturamento",
+        irpjCsll: "Impostos sobre o lucro da empresa",
+        totalBenefit: "Benefício total estimado: 43,25%",
+        finalLabel: "Locação GI (com benefício fiscal)",
         items: [
           "Mensalidade: R$ 34.697",
           "Tubo: Incluso",
-          "Manutenção: Inclusa",
+          "Contrato de Manutenção: Incluso",
           "Seguro: Incluso",
           "Logística: Inclusa",
           "Instalação: Inclusa"
         ]
+      },
+      finalTable: {
+        title: "Comparação Final",
+        model: "Modelo",
+        total: "Custo Total",
+        monthly: "Mensal"
       },
       impact: {
         title: "Impacto Financeiro",

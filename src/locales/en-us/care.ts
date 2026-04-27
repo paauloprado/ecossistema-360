@@ -137,51 +137,84 @@ export const careEnUs = {
     comparison: {
       analysis: "Feasibility Analysis",
       insights: "Finance Insights",
-      title: "COMPLETE COMPARISON — 60 MONTHS",
+      heroLine1: "Why Lease",
+      heroLine2: "With Us",
+      title: "Complete Comparison — 60 Months",
       subtitle: "Cash Acquisition x Financed Acquisition x GI Leasing",
+      upTo: "Up to",
+      projected: "Projected Real Savings",
+      monthlySaving: "Monthly Savings",
+      totalSaving: "Total Savings in 60 Months",
+      tableHeaders: {
+        item: "Item",
+        calc: "Calculation",
+        value: "Value"
+      },
       cash: {
-        title: "1. CASH ACQUISITION",
+        title: "Cash Acquisition",
         total: "R$ 1,851,000",
         monthly: "R$ 30,850/mo",
-        items: [
-          "Equipment: R$ 970,000",
-          "Tube: R$ 240,000",
-          "Maintenance: R$ 540,000",
-          "Transport: R$ 17,500",
-          "Installation: R$ 20,000",
-          "Power Panel: R$ 15,000",
-          "Insurance: R$ 48,500"
-        ]
+        formula: "1,851,000 ÷ 60 = R$ 30,850/mo",
+        consideration: "Notes",
+        considerationText: "Equipment: Aquilion Start 16-slice CT Scanner, 2 MHU",
+        table: {
+          equipment: "Equipment acquisition",    equipmentCalc: "One-time",
+          depreciation: "Depreciation",          depreciationCalc: "60 months",
+          tube: "Tube",                          tubeCalc: "60 months",
+          maintenance: "Maintenance Contract",   maintenanceCalc: "R$ 8,100/mo",
+          transport: "Transport",                transportCalc: "One-time",
+          infra: "Infrastructure & Electrical",  infraCalc: "Estimated one-time",
+          panel: "Power panel",                  panelCalc: "One-time",
+          insurance: "Insurance",                insuranceCalc: "1% per year"
+        }
       },
       financed: {
-        title: "2. FINANCED ACQUISITION",
+        title: "Financed Acquisition",
         total: "R$ 2,279,000",
         monthly: "R$ 37,983/mo",
+        formula: "23,300/mo × 60 + costs = R$ 2,279,000",
         description: "Rate: 1.15% per month — 60 months",
         parcel: "Approx. installment: R$ 23,300/mo",
-        items: [
-          "Financing: R$ 1,398,000",
-          "Tube: R$ 240,000",
-          "Maintenance: R$ 540,000",
-          "Transport: R$ 17,500",
-          "Installation: R$ 20,000",
-          "Power Panel: R$ 15,000",
-          "Insurance: R$ 48,500"
-        ]
+        considerLabel: "Consider",
+        rateLabel: "Rate",
+        termLabel: "Term",
+        equipInitial: "Initial equipment value",
+        equipTotal: "Total equipment value",
+        table: {
+          financing: "Equipment financing",      financingCalc: "R$ 23,300/mo × 60",
+          tube: "Tube",                          tubeCalc: "60 months",
+          maintenance: "Maintenance Contract",   maintenanceCalc: "R$ 9,000/mo",
+          transport: "Transport",                transportCalc: "One-time",
+          infra: "Infrastructure & Electrical",  infraCalc: "Estimated one-time",
+          panel: "Power panel",                  panelCalc: "One-time",
+          insurance: "Insurance",                insuranceCalc: "1% per year"
+        }
       },
       rental: {
-        title: "3. GI LEASING",
+        title: "GI Leasing",
         total: "R$ 1,181,443",
         effectiveMonthly: "R$ 19,690/mo",
-        taxBenefit: "R$ 880,557 Benefit",
-        explanation: "Leasing allows for a tax deduction of up to 43.25% (IRPJ, CSLL, PIS, COFINS) as it is an operational expense.",
+        monthlyLabel: "Effective Monthly Cost",
+        taxBenefit: "R$ 880,557 Recovery",
+        taxLabel: "Taxes considered",
+        pisCofins: "Federal taxes on revenue",
+        irpjCsll: "Taxes on company profit",
+        totalBenefit: "Estimated total benefit: 43.25%",
+        finalLabel: "GI Leasing (with tax benefit)",
         items: [
-          "Leasing: R$ 2,062,000",
+          "Monthly fee: R$ 34,697",
           "Tube: Included",
-          "Maintenance: Included",
+          "Maintenance Contract: Included",
           "Insurance: Included",
-          "Logistics: Included"
+          "Logistics: Included",
+          "Installation: Included"
         ]
+      },
+      finalTable: {
+        title: "Final Comparison",
+        model: "Model",
+        total: "Total Cost",
+        monthly: "Monthly"
       },
       impact: {
         title: "Financial Impact",

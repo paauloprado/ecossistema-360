@@ -137,58 +137,91 @@ export const careEsEs = {
     comparison: {
       analysis: "Análisis de Viabilidad",
       insights: "Finance Insights",
-      title: "COMPARATIVO COMPLETO — 60 MESES",
+      heroLine1: "Por qué Alquilar",
+      heroLine2: "Con Nosotros",
+      title: "Comparativo Completo — 60 Meses",
       subtitle: "Adquisición al contado x Adquisición financiada x Locación GI",
+      upTo: "Hasta",
+      projected: "Ahorro Real Proyectado",
+      monthlySaving: "Ahorro Mensual",
+      totalSaving: "Ahorro Total en 60 Meses",
+      tableHeaders: {
+        item: "Ítem",
+        calc: "Cálculo",
+        value: "Valor"
+      },
       cash: {
-        title: "1. ADQUISICIÓN AL CONTADO",
+        title: "Adquisición al Contado",
         total: "R$ 1.851.000",
         monthly: "R$ 30.850/mes",
-        items: [
-          "Equipo: R$ 970.000",
-          "Tubo: R$ 240.000",
-          "Mantenimiento: R$ 540.000",
-          "Transporte: R$ 17.500",
-          "Instalación: R$ 20.000",
-          "Cuadro de fuerza: R$ 15.000",
-          "Seguro: R$ 48.500"
-        ]
+        formula: "1.851.000 ÷ 60 = R$ 30.850/mes",
+        consideration: "Consideraciones",
+        considerationText: "Equipo: Tomógrafo Aquilion Start 16 cortes 2 MHU",
+        table: {
+          equipment: "Adquisición del equipo",      equipmentCalc: "Valor único",
+          depreciation: "Depreciación",             depreciationCalc: "60 meses",
+          tube: "Tubo",                             tubeCalc: "60 meses",
+          maintenance: "Contrato de Mantenimiento", maintenanceCalc: "R$ 8.100,00",
+          transport: "Transporte",                  transportCalc: "Valor único",
+          infra: "Infraestructura y Eléctrica",     infraCalc: "Valor único estimado",
+          panel: "Cuadro de fuerza",                panelCalc: "Valor único",
+          insurance: "Seguro",                      insuranceCalc: "1% al año"
+        }
       },
       financed: {
-        title: "2. ADQUISICIÓN FINANCIADA",
+        title: "Adquisición Financiada",
         total: "R$ 2.279.000",
         monthly: "R$ 37.983/mes",
+        formula: "23.300/mes × 60 + costos = R$ 2.279.000",
         description: "Tasa: 1,15% mensual — 60 meses",
-        parcel: "Cuota aproximada: R$ 23.300/mes",
-        items: [
-          "Financiamiento: R$ 1.398.000",
-          "Tubo: R$ 240.000",
-          "Mantenimiento: R$ 540.000",
-          "Transporte: R$ 17.500",
-          "Instalación: R$ 20.000",
-          "Cuadro de fuerza: R$ 15.000",
-          "Seguro: R$ 48.500"
-        ]
+        parcel: "Cuota aprox.: R$ 23.300/mes",
+        considerLabel: "Considerar",
+        rateLabel: "Tasa",
+        termLabel: "Plazo",
+        equipInitial: "Valor inicial del equipo",
+        equipTotal: "Valor total del equipo",
+        table: {
+          financing: "Financiamiento equipamiento",  financingCalc: "R$ 23.300/mes × 60",
+          tube: "Tubo",                              tubeCalc: "60 meses",
+          maintenance: "Contrato de Mantenimiento",  maintenanceCalc: "R$ 9.000,00",
+          transport: "Transporte",                   transportCalc: "Valor único",
+          infra: "Infraestructura y Eléctrica",      infraCalc: "Valor único estimado",
+          panel: "Cuadro de fuerza",                 panelCalc: "Valor único",
+          insurance: "Seguro",                       insuranceCalc: "1% al año"
+        }
       },
       rental: {
-        title: "3. LOCACIÓN GI",
+        title: "Locación GI",
         total: "R$ 1.181.443",
         effectiveMonthly: "R$ 19.690/mes",
-        taxBenefit: "Beneficio de R$ 880.557",
-        explanation: "La locación permite deducir hasta el 43,25% (IRPJ, CSLL, PIS, COFINS) por ser un gasto operativo.",
+        monthlyLabel: "Costo Mensual Efectivo",
+        taxBenefit: "Recuperación de R$ 880.557",
+        taxLabel: "Impuestos considerados",
+        pisCofins: "Tributos federales sobre facturación",
+        irpjCsll: "Impuestos sobre las ganancias de la empresa",
+        totalBenefit: "Beneficio total estimado: 43,25%",
+        finalLabel: "Locación GI (con beneficio fiscal)",
         items: [
-          "Locación: R$ 2.062.000",
+          "Mensualidad: R$ 34.697",
           "Tubo: Incluido",
-          "Mantenimiento: Incluido",
+          "Contrato de Mantenimiento: Incluido",
           "Seguro: Incluido",
-          "Logística: Incluida"
+          "Logística: Incluida",
+          "Instalación: Incluida"
         ]
+      },
+      finalTable: {
+        title: "Comparación Final",
+        model: "Modelo",
+        total: "Costo Total",
+        monthly: "Mensual"
       },
       impact: {
         title: "Impacto Financiero",
         economy: "Ahorro Total vs Financiamiento",
         totalEconomy: "R$ 1.097.557",
         monthlyEconomy: "≈ R$ 18.000/mes",
-        verdict: "La Locación GI é a escolha mais eficiente para preservar o caixa e maximizar o benefício fiscal."
+        verdict: "La Locación GI es la opción más eficiente para preservar el capital y maximizar el beneficio fiscal."
       }
     }
   }
