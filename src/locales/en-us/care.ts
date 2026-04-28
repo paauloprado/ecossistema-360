@@ -152,9 +152,9 @@ export const careEnUs = {
       },
       cash: {
         title: "Cash Acquisition",
-        total: "R$ 1,851,000",
-        monthly: "R$ 30,850/mo",
-        formula: "1,851,000 ÷ 60 = R$ 30,850/mo",
+        total: "R$ 1,797,000",
+        monthly: "R$ 29,950/mo",
+        formula: "1,797,000 ÷ 60 = R$ 29,950/mo",
         consideration: "Notes",
         considerationText: "Equipment: Aquilion Start 16-slice CT Scanner, 2 MHU",
         considerationTerm: "Consider a term of 60 months",
@@ -171,18 +171,18 @@ export const careEnUs = {
       },
       financed: {
         title: "Financed Acquisition",
-        total: "R$ 2,279,000",
-        monthly: "R$ 37,983/mo",
-        formula: "23,300/mo × 60 + costs = R$ 2,279,000",
-        description: "Rate: 1.15% per month — 60 months",
-        parcel: "Approx. installment: R$ 23,300/mo",
+        total: "R$ 2,381,925.95",
+        monthly: "R$ 39,698.77/mo",
+        formula: "25,915.43/mo × 60 = R$ 1,554,925.95",
+        description: "Rate: 1.7% per month — 60 months",
+        parcel: "Installment: R$ 25,915.43/mo",
         considerLabel: "Consider",
         rateLabel: "Rate",
         termLabel: "Term",
         equipInitial: "Initial equipment value",
         equipTotal: "Total equipment value",
         table: {
-          financing: "Equipment financing",      financingCalc: "R$ 23,300/mo × 60",
+          financing: "Equipment financing",      financingCalc: "R$ 25,915.43/mo × 60",
           tube: "Tube",                          tubeCalc: "60 months",
           maintenance: "Maintenance Contract",   maintenanceCalc: "R$ 9,000/mo",
           transport: "Transport",                transportCalc: "One-time",
@@ -193,10 +193,10 @@ export const careEnUs = {
       },
       rental: {
         title: "GI Leasing",
-        total: "R$ 1,181,443",
-        effectiveMonthly: "R$ 19,690/mo",
+        total: "R$ 1,181,442.72",
+        effectiveMonthly: "R$ 19,690.71/mo",
         monthlyLabel: "Effective Monthly Cost",
-        taxBenefit: "R$ 880,557 Recovery",
+        taxBenefit: "R$ 900,394.68 Recovery",
         taxLabel: "Taxes considered",
         pisCofins: "Federal taxes on revenue",
         irpjCsll: "Taxes on company profit",
@@ -220,8 +220,8 @@ export const careEnUs = {
       impact: {
         title: "Financial Impact",
         economy: "Total Savings vs Financing",
-        totalEconomy: "R$ 1,097,557",
-        monthlyEconomy: "≈ R$ 18,000/mo",
+        totalEconomy: "R$ 1,200,483",
+        monthlyEconomy: "R$ 20,008/mo",
         verdict: "GI Leasing is the most efficient choice for preserving cash and maximizing tax benefits."
       }
     }

@@ -152,9 +152,9 @@ export const careEsEs = {
       },
       cash: {
         title: "Adquisición al Contado",
-        total: "R$ 1.851.000",
-        monthly: "R$ 30.850/mes",
-        formula: "1.851.000 ÷ 60 = R$ 30.850/mes",
+        total: "R$ 1.797.000",
+        monthly: "R$ 29.950/mes",
+        formula: "1.797.000 ÷ 60 = R$ 29.950/mes",
         consideration: "Consideraciones",
         considerationText: "Equipo: Tomógrafo Aquilion Start 16 cortes 2 MHU",
         considerationTerm: "Considerar plazo de 60 meses",
@@ -171,18 +171,18 @@ export const careEsEs = {
       },
       financed: {
         title: "Adquisición Financiada",
-        total: "R$ 2.279.000",
-        monthly: "R$ 37.983/mes",
-        formula: "23.300/mes × 60 + costos = R$ 2.279.000",
-        description: "Tasa: 1,15% mensual — 60 meses",
-        parcel: "Cuota aprox.: R$ 23.300/mes",
+        total: "R$ 2.381.925,95",
+        monthly: "R$ 39.698,77/mes",
+        formula: "25.915,43/mes × 60 = R$ 1.554.925,95",
+        description: "Tasa: 1,7% mensual — 60 meses",
+        parcel: "Cuota: R$ 25.915,43/mes",
         considerLabel: "Considerar",
         rateLabel: "Tasa",
         termLabel: "Plazo",
         equipInitial: "Valor inicial del equipo",
         equipTotal: "Valor total del equipo",
         table: {
-          financing: "Financiamiento equipamiento",  financingCalc: "R$ 23.300/mes × 60",
+          financing: "Financiamiento equipamiento",  financingCalc: "R$ 25.915,43/mes × 60",
           tube: "Tubo",                              tubeCalc: "60 meses",
           maintenance: "Contrato de Mantenimiento",  maintenanceCalc: "R$ 9.000,00",
           transport: "Transporte",                   transportCalc: "Valor único",
@@ -193,10 +193,10 @@ export const careEsEs = {
       },
       rental: {
         title: "Locación GI",
-        total: "R$ 1.181.443",
-        effectiveMonthly: "R$ 19.690/mes",
+        total: "R$ 1.181.442,72",
+        effectiveMonthly: "R$ 19.690,71/mes",
         monthlyLabel: "Costo Mensual Efectivo",
-        taxBenefit: "Recuperación de R$ 880.557",
+        taxBenefit: "Recuperación de R$ 900.394,68",
         taxLabel: "Impuestos considerados",
         pisCofins: "Tributos federales sobre facturación",
         irpjCsll: "Impuestos sobre las ganancias de la empresa",
@@ -220,8 +220,8 @@ export const careEsEs = {
       impact: {
         title: "Impacto Financiero",
         economy: "Ahorro Total vs Financiamiento",
-        totalEconomy: "R$ 1.097.557",
-        monthlyEconomy: "≈ R$ 18.000/mes",
+        totalEconomy: "R$ 1.200.483",
+        monthlyEconomy: "R$ 20.008/mes",
         verdict: "La Locación GI es la opción más eficiente para preservar el capital y maximizar el beneficio fiscal."
       }
     }

@@ -19,7 +19,6 @@ export const GroupInfoPage = () => {
 
   const cashTableRows = [
     { item: t("care.comparison.cash.table.equipment"),     calc: t("care.comparison.cash.table.equipmentCalc"),    value: "R$ 970.000" },
-    { item: t("care.comparison.cash.table.depreciation"),  calc: t("care.comparison.cash.table.depreciationCalc"), value: "R$ 485.000" },
     { item: t("care.comparison.cash.table.tube"),          calc: t("care.comparison.cash.table.tubeCalc"),         value: "R$ 240.000" },
     { item: t("care.comparison.cash.table.maintenance"),   calc: t("care.comparison.cash.table.maintenanceCalc"),  value: "R$ 486.000" },
     { item: t("care.comparison.cash.table.transport"),     calc: t("care.comparison.cash.table.transportCalc"),    value: "R$ 17.500" },
@@ -29,7 +28,7 @@ export const GroupInfoPage = () => {
   ];
 
   const financedTableRows = [
-    { item: t("care.comparison.financed.table.financing"),   calc: t("care.comparison.financed.table.financingCalc"),   value: "R$ 1.398.000" },
+    { item: t("care.comparison.financed.table.financing"),   calc: t("care.comparison.financed.table.financingCalc"),   value: "R$ 1.554.925,95" },
     { item: t("care.comparison.financed.table.tube"),        calc: t("care.comparison.financed.table.tubeCalc"),        value: "R$ 240.000" },
     { item: t("care.comparison.financed.table.maintenance"), calc: t("care.comparison.cash.table.maintenanceCalc"),     value: "R$ 486.000" },
     { item: t("care.comparison.financed.table.transport"),   calc: t("care.comparison.financed.table.transportCalc"),   value: "R$ 17.500" },
@@ -39,9 +38,9 @@ export const GroupInfoPage = () => {
   ];
 
   const comparisonFinalRows = [
-    { model: t("care.comparison.cash.title"),            total: "R$ 1.851.000", monthly: "R$ 30.850", highlight: false },
-    { model: t("care.comparison.financed.title"),        total: "R$ 2.279.000", monthly: "R$ 37.983", highlight: false },
-    { model: t("care.comparison.rental.finalLabel"),     total: "R$ 1.181.443", monthly: "R$ 19.690", highlight: true },
+    { model: t("care.comparison.cash.title"),            total: "R$ 1.797.000,00",    monthly: "R$ 29.950,00",   highlight: false },
+    { model: t("care.comparison.financed.title"),        total: "R$ 2.381.925,95",    monthly: "R$ 39.698,77",   highlight: false },
+    { model: t("care.comparison.rental.finalLabel"),     total: "R$ 1.181.442,72",    monthly: "R$ 19.690,71",   highlight: true },
   ];
 
   // Totem-optimised table: bump all inner text to text-lg/xl
@@ -173,7 +172,7 @@ export const GroupInfoPage = () => {
                   <div className="grid grid-cols-1 gap-2.5">
                     <div className="flex items-center justify-between">
                       <span className="text-base font-bold text-red-400/80">{t("care.comparison.financed.rateLabel")}</span>
-                      <span className="text-base font-black text-red-900/60">1,15% ao mês</span>
+                      <span className="text-base font-black text-red-900/60">1,7% ao mês</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-base font-bold text-red-400/80">{t("care.comparison.financed.termLabel")}</span>
@@ -185,7 +184,7 @@ export const GroupInfoPage = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-base font-bold text-red-400/80">{t("care.comparison.financed.equipTotal")}</span>
-                      <span className="text-base font-black text-red-900/60">R$ 1.398.000</span>
+                      <span className="text-base font-black text-red-900/60">R$ 1.554.925,95</span>
                     </div>
                   </div>
                 </div>
