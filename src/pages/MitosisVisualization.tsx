@@ -95,6 +95,13 @@ const AppBox = ({ img, icon, label }: { img?: string; icon?: React.ReactNode; la
   </div>
 );
 
+// ─── NEW badge ──────────────────────────────────────────────────────────────
+const NewBadge = ({ className = "-top-2 -right-2" }: { className?: string }) => (
+  <span className={`absolute ${className} z-50 bg-[#003B5C] text-white text-[11px] font-black uppercase tracking-wide px-2 py-1 rounded-full shadow-md leading-none pointer-events-none select-none`}>
+    NEW
+  </span>
+);
+
 const AppCircle = ({ icon, label, black }: { icon: React.ReactNode; label?: string; black?: boolean }) => (
   <div className="mv-appcircle-wrap group">
     <div className={`mv-appcircle-pulse--slow ${black ? '!bg-black/20' : ''}`}></div>
@@ -462,7 +469,7 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
     { id: "gi-engenharia", angle: -45, dist: r_o, content: <div className="scale-110 lg:scale-125"><AppBox img="/assets/gi-engenharia-logo.png" /></div> },
     // Only show toggle if we are in stage 0 (resting Grupo)
     ...(stage === 0 ? [{
-      id: "toggle-care", angle: 0, dist: r_o * 1.06, content: (
+      id: "toggle-care", angle: 0, dist: r_o * 1.15, content: (
         <div
           onClick={(e) => { e.stopPropagation(); onToggleView(); }}
           className="mv-toggle-orbit-wrap cursor-pointer hover:scale-110 transition-transform relative flex items-center justify-center"
@@ -472,6 +479,7 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
           <div className="w-28 h-28 lg:w-36 lg:h-36 bg-white rounded-full p-5 flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.5)] border-2 border-[#c5e24a]/50 relative z-10">
             <img src="/assets/careimagem-logo.svg" className="w-full h-full object-contain" alt="Alternar para Care Imagem" />
           </div>
+          <NewBadge className="-top-2 left-1/2 -translate-x-1/2" />
         </div>
       )
     }] : []),
@@ -480,7 +488,7 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
     { id: "the-imagem", angle: 145, dist: r_o, content: <AppBox img="/assets/theimagem-logo.png" /> },
     {
       id: "galaxy", angle: 195, dist: r_o, content: (
-        <div className="mv-appbox-wrap">
+        <div className="mv-appbox-wrap relative">
           <div className="mv-appbox-pulse--slow"></div>
           <div className="mv-appbox-pulse"></div>
           <div className="mv-appbox !py-4">
@@ -488,6 +496,7 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
               <img src="/assets/galaxy/logo_galaxy_azul.png" className="mv-appbox-img" alt="Galaxy" />
             </div>
           </div>
+          <NewBadge className="-top-2 -left-2" />
         </div>
       )
     },
@@ -503,7 +512,12 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
     // Telerad (Parent: 45° / 3 items: 30°, 45°, 60°)
     { id: "telerad-comparative", angle: 30, dist: r_i, content: <AppCircle icon={<img src="icons/telerad/VETORES-13.png" className="mv-appcircle-img" />} label={t("pages.marketComparison")} /> },
     { id: "telerad-private", angle: 45, dist: r_i, content: <AppCircle icon={<img src="icons/telerad/VETORES-16.png" className="mv-appcircle-img" />} label={t("pages.privatePartnership")} /> },
-    { id: "telerad-unidades-moveis", angle: 60, dist: r_i, content: <AppCircle icon={<img src="/assets/CARRETA AGSUS.svg" className="mv-appcircle-img scale-125" />} label={t("contentPage.unidadesMoveis.navTitle")} /> },
+    { id: "telerad-unidades-moveis", angle: 60, dist: r_i, content: (
+      <div className="relative">
+        <AppCircle icon={<img src="/assets/CARRETA AGSUS.svg" className="mv-appcircle-img scale-125" />} label={t("contentPage.unidadesMoveis.navTitle")} />
+        <NewBadge className="-top-2 left-1/2 -translate-x-1/2" />
+      </div>
+    )},
 
     // Logística (Parent: 90° / 1 item: 90°)
     { id: "logistica-diferenciais", angle: 90, dist: r_i, content: <AppCircle icon={<img src="icons/VETORES-9.png" className="mv-appcircle-img" />} label={t("pages.difrencials")} /> },
@@ -593,7 +607,6 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
 
               {/* Internal Bilayer Glow */}
               <animated.circle cx={lx} cy={CY} r={lr.to(r => r + 4)} fill="none" stroke="white" strokeWidth={1.5} opacity={0.3} />
-
               {/* Core Pulse Border */}
               <animated.circle cx={lx} cy={CY} r={lr} fill="none" stroke="#c5e24a" strokeWidth={2} className="mv-membrane-pulse" />
 
@@ -617,6 +630,26 @@ function MitosisSimulation({ targetView, onToggleView }: { targetView: "grupo" |
               })}
             </g>
           </svg>
+
+          {/* Care toggle ring — small dashed circle that wraps around the Care Imagem button */}
+          {stage === 0 && (
+            <svg
+              width={SVG_W} height={SVG_H}
+              style={{ position: "absolute", top: 0, left: 0, zIndex: 20, pointerEvents: "none", overflow: "visible" }}
+            >
+              <animated.circle
+                cx={lx.to(lxV => lxV + cur.lr * 0.95 * 1.15)}
+                cy={CY}
+                r={75}
+                fill="none"
+                stroke="#c5e24a"
+                strokeWidth={3}
+                strokeDasharray="6 14"
+                opacity={0.85}
+                className="mv-membrane-outer"
+              />
+            </svg>
+          )}
 
           <animated.div
             className="mv-cell-overlay"

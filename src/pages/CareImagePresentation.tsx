@@ -350,7 +350,7 @@ export const CarePresentationModal = ({
             "Raios X Digital de alta performance",
             "Ultrassonografia multiespecialidade",
             "Mamografia Digital",
-            "Posto de Coleta Laboratorial",
+            "Exames Laboratoriais",
             "Telemedicina e Triagem Digital",
           ],
         },
@@ -360,8 +360,7 @@ export const CarePresentationModal = ({
           items: [
             "Tudo do Modelo Start +",
             "Tomografia Computadorizada (16/32 canais)",
-            "Densitometria Óssea",
-            "Mix ampliado de análises clínicas",
+            "Densitometria Óssea"
           ],
         },
         {
@@ -370,8 +369,7 @@ export const CarePresentationModal = ({
           items: [
             "Tudo do Modelo Plus +",
             "Ressonância Magnética (1.5T)",
-            "Hub completo de especialidades médicas",
-            "Alta complexidade diagnóstica",
+            "Alta complexidade diagnóstica"
           ],
         },
       ],

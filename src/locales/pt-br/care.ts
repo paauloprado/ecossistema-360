@@ -76,7 +76,7 @@ export const carePtBr = {
       description: "O franqueado opera um centro de diagnóstico completo, com múltiplas fontes de receita e capacidade de atender diferentes demandas em um único local. A CareImagem oferece diferentes modelos de implantação, permitindo um crescimento progressivo de acordo com o potencial da região.",
       revenueTitle: "Fontes de Receita",
       revenues: [
-        "Exames de Imagem (Raio-X, Mamografia, TC, RM)",
+        "Exames de Imagem (Raio-X, Mamografia, Ultrassom, Densitometria Óssea, TC, RM)",
         "Exames Laboratoriais (Análises clínicas)",
         "Consultórios de especialidades",
         "Telemedicina e Pronto Atendimento digital"
